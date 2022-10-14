@@ -4,17 +4,12 @@
 *
 * Return: Always 0 (Success)
 */
-
 int main(void)
-
 {
-	char ch = 'z';
+	char ch = '0';
 
-	for (ch = 'z'; ch >= 'a'; ch--)
-
+	for (ch = '0'; ch <= '9'; ch++)
 		putchar(ch);
-
 	putchar('\n');
 	return (0);
-}    
-
+}
