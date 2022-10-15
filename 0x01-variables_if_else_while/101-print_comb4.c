@@ -6,20 +6,20 @@
 */
 int main(void)
 {
-	int hol;
-	int hol1;
-	int hol2;
+	int num;
+	int num1;
+	int num2;
 
-	for (hol = 48; hol <= 57 ; hol++)
+	for (num = 48; num <= 57 ; num++)
 	{
-		for (hol1 = hol + 1 ; hol1 <= 57 ; hol1++)
+		for (num1 = num + 1 ; num1 <= 57 ; num1++)
 		{
-			for (hol2 = hol1 + 1 ; hol2 <= 57 ; hol2++)
+			for (num2 = num1 + 1 ; num2 <= 57 ; num2++)
 			{
-				putchar (hol);
-				putchar (hol1);
-				putchar (hol2);
-				if (hol == 55 && hol1 == 56 && hol2 == 57)
+				putchar (num);
+				putchar (num1);
+				putchar (num2);
+				if (num == 55 && num1 == 56 && num2 == 57)
 				{
 					putchar ('\n');
 					break;
