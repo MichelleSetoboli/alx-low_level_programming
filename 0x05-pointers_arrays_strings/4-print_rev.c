@@ -5,6 +5,7 @@
   * @s: a string
   * Return: Always 0 (Success)
   */
+
 void print_rev(char *s)
 {
 	int i = 0;
