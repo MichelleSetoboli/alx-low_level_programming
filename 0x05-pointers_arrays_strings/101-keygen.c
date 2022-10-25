@@ -1,57 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
-#include <unistd.h>
 
 /**
-  * Generates random valid password for the program  101-crackme
+  * main - generates random valid passwords for the program
+  * 101-crackme
   *
   * Return: Always 0 (Success)
   */
 int main(void)
 {
-	printf("Length: ");
+	int i, j, k, s;
+char c[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char p[58];
 
-	int length;
-	scanf("%d", &length);
-
-	if (length <= 0)
+srand(time(NULL));
+while (s != 2772)
+{
+	i = k = s = 0;
+	while ((2772 - 122) > s)
 	{
-		printf("Password length must be >= 1!");
-		return 1;
+		j = rand() % 62;
+		p[i] = c[j];
+		s += c[j];
+		i++;
 	}
-	char *password = malloc(length + 1);
-
-	char *digits = "0123456789";
-	int digits_length = strlen(digits);
-
-	char *lowers = "abcdefghijklmnopqrstuvwxyz";
-	int lowers_length = strlen(lowers);
-
-	char *uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	int uppers_length = strlen(uppers);
-
-	char *symbols = "!@#$%^&*()";
-	int symbols_length = strlen(symbols);
-
-	srand(time(NULL) * getpid());
-
-	for (int i = 0; i < length; i++)
+	while (c[k])
 	{
-		int char_type = rand() % 4;
-		
-		if (char_type == 0)
-			password[i] = digits[rand() % digits_length];
-		else if (char_type == 1)
-			password[i] = lowers[rand() % lowers_length];
-		else if (char_type == 2)
-			password[i] = uppers[rand() % uppers_length];
-		else password[i] = symbols[rand() % symbols_length];
+		if (c[k] == (2772 - s))
+		{
+			p[i] = c[k];
+			s += c[k];
+			i++;
+			break;
+		}
+		k++;
 	}
-	password[length] = '\0';
-	
-	printf("Password: %s/n", password);
-
-	free(password);
+}
+p[i] = '\0';
+printf("%s", p);
+return (0);
 }
